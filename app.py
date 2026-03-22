@@ -14,7 +14,7 @@ tfidf = pickle.load(open('tfidf.pkl', 'rb'))
 # Clean text
 def clean_text(text):
     text = text.lower()
-    text = re.sub('[^a-z]', ' ', text)
+    text = re.sub('[^a-zA-Z]', ' ', text)
     text = text.split()
     text = [word for word in text if word not in stopwords.words('english')]
     return " ".join(text)
